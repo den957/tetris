@@ -1,10 +1,25 @@
+let start = document.querySelector('.menu__start') // start button
+let menu = document.querySelector('.menu') // menu page
+let main = document.querySelector('.main') // main page
+let close = document.querySelector('.tetris__close') // button close
 let tetris = document.querySelector('.tetris')
+//start new game
+start.addEventListener('click', () => {
+   menu.style.display = 'none'
+   main.style.display = 'block'
+   createFigure()
+})
+//close game
+close.addEventListener('click', () => {
+   window.location.reload()
+})
+//create board
 for (let i = 1; i < 253; i++) {
    let square = document.createElement('div')
    square.classList.add('square')
    tetris.appendChild(square)
 }
-let square = document.querySelectorAll('.square') //square (all of square = 150)
+let square = document.querySelectorAll('.square') //square (all of square = 252)
 let i = 0
 for (let y = 21; y > 0; y--) {
    for (let x = 1; x < 13; x++) {
@@ -261,7 +276,6 @@ let figures = [
 let currentFigure = 0 //random figure
 let figureBody = 0 // body figure
 let rotate = 1 // count  of rotate our figure
-
 let createFigure = () => {
    function getRandom() {
       return Math.round(Math.random() * (figures.length - 1))
@@ -279,11 +293,9 @@ let createFigure = () => {
       figureBody[i].classList.add('figure')
    }
 }
-createFigure()
-
 let score = 0 //our score
 let input = document.querySelector('input') //text score
-input.value = `Your score: ${score}`
+input.value = `Score: ${score}`
 
 //function of move our figure
 let move = () => {
@@ -330,7 +342,7 @@ let move = () => {
                count++
                if (count === 12) {
                   score += 10
-                  input.value = `Your score: ${score}`
+                  input.value = `Score: ${score}`
                   for (let m = 1; m < 13; m++) {
                      document.querySelector(`[x = "${m}"][y = "${i}"]`).classList.remove('set')
                   }
@@ -355,7 +367,7 @@ let move = () => {
       for (let n = 1; n < 13; n++) {
          if (document.querySelector(`[x = "${n}"][y = "${17}"]`).classList.contains('set')) {
             clearInterval(interval)
-            alert(input.value = `Your score: ${score}`)
+            alert(input.value = `Score: ${score}`)
             break
          }
       }

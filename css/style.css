@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main {
+  display: none;
   width: 420px;
   height: 595px;
   position: relative;
@@ -90,13 +91,16 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: absolute;
   bottom: 0;
   width: 420px;
   height: 735px;
   position: relative;
   overflow: hidden;
   background-color: white;
+}
+
+.main:hover .tetris__close {
+  display: block;
 }
 
 .square {
@@ -110,43 +114,72 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input {
-  color: grey;
-  font-size: 25px;
+  position: absolute;
+  top: 9px;
+  left: 3px;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 1;
+  background-color: transparent;
 }
 
-/*.main {
-   width:420px;
-   height: 595px;
-   position: relative;
-   overflow: hidden;
-   margin: 0 auto;
-   top:50%;
-   border:1px solid grey;
-   margin-top: -297.5px;
+.menu {
+  display: block;
+  position: relative;
+  top: 50%;
+  width: 420px;
+  height: 595px;
+  margin: 0 auto;
+  margin-top: -297.5px;
+  border: 1px solid grey;
+  background-image: url("../image/tetris.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.menu__start {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-left: -7em;
+  font-size: 18px;
+  border: 0.3em solid #fb4702;
+  width: 14em;
+  height: 3em;
+  border-radius: 0.2em;
+  background-color: #af0158;
+  color: white;
+  font-weight: 700;
 }
-.tetris {
-   display: flex;
-   flex-wrap:wrap;
-   position: absolute;
-   bottom: 0;
-   width:420px;
-   height: 735px;
-   position: relative;
-   overflow: hidden;
-   background-color: white;
-   
+
+.tetris__close {
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  color: black;
+  font-size: 2em;
+  z-index: 20;
 }
-.square {
-   width:35px;
-   height:35px;
-   border:1px solid grey;
+
+.tetris__close:hover {
+  color: #a99e9e;
+  cursor: pointer;
 }
-.figure, .set {
-   background-color: red;
+
+.tetris__lose {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+  margin-top: -50px;
+  color: red;
+  font-size: 40px;
+  font-weight: 700;
+  z-index: 40;
 }
-input {
-   color:grey;
-   font-size: 25px;
-}*/
 /*# sourceMappingURL=style.css.map */
