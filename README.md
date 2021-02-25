@@ -1,8 +1,8 @@
 # Tetris
 
-![](https://www.pixelstalk.net/wp-content/uploads/images1/Game-Tetris-Backgrounds.jpg)
-
 ### Build with
 - JavaScript
 - Html
 - Css
+
+#### Demo version: https://den957.github.io/website/
