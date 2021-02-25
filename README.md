@@ -5,4 +5,4 @@
 - Html
 - Css
 
-#### Demo version: https://den957.github.io/website/
+#### Demo version: https://den957.github.io/tetris/
